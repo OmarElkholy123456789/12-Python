@@ -28,12 +28,63 @@ elif numb == 3:
 else:
     print("That isn't a number from 1 to 3")
 
+5.
+user_input = ""
+
+while True:
+    user_input = str(input("Please type yes")).strip().lower()
+    if user_input == "yes":
+        print ("Good sole")
+        break
+
+6.
+for i in range (11):
+    print(i)
+
+
+7.
+movie_list = ["Interstellar", "Shutter Island", "Inception"]
+
+for movie_name in movie_list:
+    print(movie_name)
+
+
+8.
+numbers = [2, 5, 3]
+total = 0
+
+for num in numbers:
+    total = total + num
+
+print (total)
+
+9.
+import random
+
+numb = random.randint(1, 10)
+
+while True:
+    try:
+        user_input = int(input("Please pick a number from 1-10"))
+        if user_input == numb:
+            print ("You got it!")
+            break
+        else:
+            print ("Wrong! Try again.")
+    except:
+        ValueError
+        print ("Incorrect value.")
+
 """
 
-check = False
+print ("1. Start Game")
+print ("2. Load Game")
+print ("3. Quit")
 
-while check == False:
-    user_input = str(input("Please type 'yes'")).lower
-    if user_input == "yes":
-        print("Thanks")
-        check = True
+user_input = int(input("Please choose an option:    "))
+if user_input == 1:
+    print ("The game is starting now.")
+elif user_input == 2:
+    print ("Loading the game now.")
+elif user_input == 3:
+    print("Quitting now.")
