@@ -75,8 +75,7 @@ while True:
         ValueError
         print ("Incorrect value.")
 
-"""
-
+10.
 print ("1. Start Game")
 print ("2. Load Game")
 print ("3. Quit")
@@ -88,3 +87,44 @@ elif user_input == 2:
     print ("Loading the game now.")
 elif user_input == 3:
     print("Quitting now.")
+else:
+    print("Please pick one of the options from 1-3")
+
+11.
+animals = ["dog", "cat", "bird", "horse", "zebra"]
+user_input = input("What is your favourite animal?").lower()
+check = False
+
+for i in animals:
+    if i == user_input:
+        print("Your animal is in the list.")
+        check = True
+    else:
+        pass
+
+if check == False:
+    print("That animal is not in the list.")
+
+12.
+user_input = int(input("Please enter a number.  "))
+
+for i in range (user_input, -1, -1):
+    print(i)
+
+13.
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for i in numbers:
+    if i % 2 == 0:
+        print (i)
+
+        """
+
+user_pass = str(input("Please create a password.    "))
+
+user_input = str(input("Please enter your password. "))
+
+if user_input == user_pass:
+    print("Access granted.")
+else:
+    print("Access denied.")
