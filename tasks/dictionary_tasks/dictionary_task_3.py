@@ -2,7 +2,8 @@ countries = {
     "Egypt" : "Cairo",
     "New Zealand" : "Wellington",
     "Australia" : "Canberra",
-    "Azerbaijan" : "Baku"
+    "Azerbaijan" : "Baku",
+    "China" : "Beijing"
 }
 
 for key, value in countries.items():
