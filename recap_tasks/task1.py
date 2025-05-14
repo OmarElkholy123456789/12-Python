@@ -1,4 +1,6 @@
-grade = int(input("What score did you get on the test from 0-100 - "))
+import easygui
+
+grade = int(easygui.enterbox("Enter grade:"))
 
 if grade >= 80 and grade <= 100:
     print("You got an excellence.")
