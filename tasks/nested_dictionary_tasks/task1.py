@@ -19,8 +19,8 @@ favourite_games = {
         "Title" : "Minecraft",
         "Genre" : "Survival, sandbox, adventure",
         "Platform(s)" : "PC, Xbox, PS, Nintendo Switch, Mobile",
-        "Release Year" : int(),
-        "Rating out of 10" : float()    
+        "Release Year" : 2009,
+        "Rating out of 10" : 9.4
     },
     4 : {
         "Title" : "Rainbow Six Seige",
@@ -73,4 +73,15 @@ favourite_games = {
     }
 }
 
-for rank, key, value 
+def print_favourite_games():
+    for rank, game_info in favourite_games.items():
+        msg = f"Rank: {rank}\n"
+        msg += f"Title: {game_info['Title']}\n"
+        msg += f"Genre: {game_info['Genre']}\n"
+        msg += f"Platform: {game_info['Platform(s)']}\n"
+        msg += f"Release Year: {game_info['Release Year']}\n"
+        msg += f"Rating: {game_info['Rating out of 10']}/10"
+        
+        easygui.msgbox(msg, title=f"Favourite Game #{rank}")
+
+print_favourite_games()
