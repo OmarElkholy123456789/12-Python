@@ -84,4 +84,21 @@ def print_favourite_games():
         
         easygui.msgbox(msg, title=f"Favourite Game #{rank}")
 
-print_favourite_games()
+def show_menu():
+    """
+    """
+    options = {
+        #"Add Game" : add_game,
+        "Edit Game" : edit_game,
+        "Quit Menu" : quit_menu
+    }
+
+    choice_list = []
+
+    for key in options:
+        choice_list.append(key)
+
+    user_choice = easygui.buttonbox("What would you like to do sole?", \
+    choices = choice_list)
+
+    function = options[user_choice]()
