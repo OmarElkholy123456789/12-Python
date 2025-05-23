@@ -88,6 +88,7 @@ def show_menu():
     """
     """
     options = {
+        print_games 
         #"Add Game" : add_game,
         "Edit Game" : edit_game,
         #"Quit Menu" : quit_menu
@@ -108,19 +109,30 @@ def edit_game():
     """
     game_titles = []
 
-    for key, value in favourite_games.items():
-        game_titles.append(value["Title"])
+    for key, titles in favourite_games.items():
+        game_titles.append(titles["Title"])
 
-    user_choice = easygui.choicebox("What game would you like to edit?", \
-    choices = game_titles)
+    msg = "What game would you like to edit the details of"
+    title="GAME CHOICE"
 
-    user_options = []
+    game_choice = easygui.buttonbox(msg, title, game_titles)
 
-    for key in favourite_games.items():
-        user_options.append(key)
+    game_info = []
 
-    user_info = easygui.buttonbox("What would you like to edit?", \
-    choices = user_options)
+    for game_information in favourite_games[game_choice]:
+        game_info.append(game_information)
+
+    msg = f"What detail of {game_choice} would you like to edit?"
+    title = "EDIT CHOICE"
+
+    edit_choice = easygui.buttonbox(msg, title, game_info)
+
+    msg = f"Enter the new {edit_choice} for {game_choice}"
+    title = "EDIT CHOICE"
+
+    favourite_games[game_choice][edit_choice] = easygui.enterbox(msg, title)
+
+    show_menu()
 
     
 
