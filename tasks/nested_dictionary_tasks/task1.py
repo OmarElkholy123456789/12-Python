@@ -80,8 +80,9 @@ def show_menu():
         "Print Games" : print_favourite_games,
         "Add Game" : add_game,
         "Edit Game" : edit_game,
-        "Quit Menu" : quit,
-        "Delete Game" : delete_game
+        "Search Game" : search_game,
+        "Delete Game" : delete_game,
+        "Quit Menu" : quit
     }
 
     choice_list = []
@@ -95,15 +96,14 @@ def show_menu():
     function = options[user_choice]()
 
 def print_favourite_games():
-    for rank, game_info in favourite_games.items():
-        msg = f"Rank: {rank}\n"
-        msg += f"Title: {game_info['Title']}\n"
+    for game, game_info in favourite_games.items():
+        msg = f"Title: {game_info['Title']}\n"
         msg += f"Genre: {game_info['Genre']}\n"
         msg += f"Platform: {game_info['Platform(s)']}\n"
         msg += f"Release Year: {game_info['Release Year']}\n"
         msg += f"Rating: {game_info['Rating out of 10']}/10"
         
-        easygui.msgbox(msg, title=f"Favourite Game #{rank}")
+        easygui.msgbox(msg, title=f"Favourite Game #{game}")
 
 def edit_game():
     """
@@ -149,8 +149,26 @@ def add_game():
         "Release Year" : game_release_year,
         "Rating out of 10" : game_rating
     }
-    
+
     show_menu()
+
+def search_game():
+    game_titles = []
+
+    for key, titles in favourite_games.items():
+        game_titles.append(titles["Title"])
+
+    searched_game = easygui.buttonbox("What game would you like to search \
+    for?", choices = game_titles)
+
+    for game, game_info in favourite_games(searched_game):
+        msg = f"Title: {game_info['Title']}\n"
+        msg += f"Genre: {game_info['Genre']}\n"
+        msg += f"Platform: {game_info['Platform(s)']}\n"
+        msg += f"Release Year: {game_info['Release Year']}\n"
+        msg += f"Rating: {game_info['Rating out of 10']}/10"
+        
+        easygui.msgbox(msg, title=f"Favourite Game #{game}")
 
 def delete_game():
 
